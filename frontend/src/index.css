@@ -1,0 +1,80 @@
+/* ============================================
+   GLOBAL RESET
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================
+   ANIMASI SPINNER
+   ============================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   TOMBOL HOVER
+   ============================================ */
+button:hover {
+  filter: brightness(0.96);
+}
+button:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   RESPONSIF — MOBILE (< 640px)
+   ============================================ */
+@media (max-width: 640px) {
+  /* Toolbar: tombol jadi full width, tanggal penuh */
+  .sbt-toolbar-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Sembunyikan teks tombol Simpan/Refresh, tampilkan ikon saja */
+  .sbt-btn-text {
+    display: none;
+  }
+
+  /* Grid kehadiran jadi 1 kolom di HP kecil */
+  .sbt-grid-kehadiran {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Preview WA lebih kecil */
+  pre {
+    font-size: 12px !important;
+    padding: 12px !important;
+  }
+}
+
+/* ============================================
+   RESPONSIF — TABLET (641px - 1024px)
+   ============================================ */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .sbt-grid-kehadiran {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
